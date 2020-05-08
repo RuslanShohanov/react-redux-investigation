@@ -3,14 +3,14 @@ import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 
+import { App } from './App';
 import * as serviceWorker from './serviceWorker';
 import { todoApp } from './store/reducers';
 
 import './index.css';
-import { App } from './App';
 
 const initialState = {
-    todoList: [{ id: 0, text: '123123123', isCompleted: false }],
+    todoList: [{ id: 0, text: 'Todo item 1', isCompleted: false }],
 };
 
 const store = createStore(

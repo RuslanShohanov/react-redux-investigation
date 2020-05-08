@@ -7,7 +7,6 @@ export const App = () => {
     return (
         <>
             <ToDo />
-            //@ts-ignore
             <VisibleToDoList />
             <Footer />
         </>

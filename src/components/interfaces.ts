@@ -7,8 +7,8 @@ export interface ToDoItemProps {
 }
 
 export interface ToDoListProps {
-    items: ToDoItem[];
-    toggleItem: (id: number) => void;
+    todos: ToDoItem[];
+    toggleTodo: (id: number) => void;
 }
 
 export interface FilterLinkProps {
