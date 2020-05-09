@@ -5,9 +5,9 @@ import { LinkProps } from './interfaces';
 import { Styled } from './styled';
 
 export const Link = (props: PropsWithChildren<LinkProps>) => {
-    return (
-        <Styled.AddButton disabled={props.isActive} onClick={props.onClick}>
-            {props.children}
-        </Styled.AddButton>
-    );
+	return (
+		<Styled.FilterButton disabled={props.isActive} onClick={props.onClick}>
+			{props.children}
+		</Styled.FilterButton>
+	);
 };

@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
-import { AddTodo } from '../components/add-todo';
 
-export const ToDo = connect()(AddTodo);
+import { SubmitToDo } from '../components/form';
+
+export const Submit = connect()(SubmitToDo);

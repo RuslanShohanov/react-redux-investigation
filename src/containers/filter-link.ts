@@ -6,18 +6,15 @@ import { Link } from '../components/link';
 import { AppState } from '../store/interfaces';
 import { FilterLinkProps } from '../components/interfaces';
 
-const mapStateToProps = (
-    state: AppState,
-    ownProps: FilterLinkProps
-) => ({
-    isActive: ownProps.filter === state.visibilityFilter,
+const mapStateToProps = (state: AppState, props: FilterLinkProps) => ({
+	isActive: props.filter === state.visibilityFilter,
 });
 
 const mapDispatchToProps = (
-    dispatch: Dispatch<AnyAction>,
-    ownProps: FilterLinkProps
+	dispatch: Dispatch<AnyAction>,
+	props: FilterLinkProps
 ) => ({
-    onClick: () => dispatch(setVisibilityFilter(ownProps.filter)),
+	onClick: () => dispatch(setVisibilityFilter(props.filter)),
 });
 
 export const FilterLink = connect(mapStateToProps, mapDispatchToProps)(Link);
