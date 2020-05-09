@@ -23,7 +23,7 @@ const mapStateToProps = (state: AppState) => ({
 });
 
 const mapDispatchToProps = (dispatch: Dispatch<AnyAction>) => ({
-    toggleTodo: (id: number) => dispatch(toggleTodo(id)),
+    toggleTodo: (id: string) => dispatch(toggleTodo(id)),
 });
 
 export const VisibleToDoList = connect(mapStateToProps, mapDispatchToProps)(ToDoList);

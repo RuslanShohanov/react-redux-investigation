@@ -1,4 +1,5 @@
 import { combineReducers, AnyAction } from 'redux';
+import { v4 } from "node-uuid";
 
 import { VisibilityFilter, ToDoItem } from './interfaces';
 import { SET_VISIBILITY_FILTER, ADD_TODO, TOGGLE_TODO } from './constants';
@@ -18,14 +19,15 @@ const visibilityFilter = (
 const todoList = (state: ToDoItem[] = [], action: AnyAction) => {
     switch (action.type) {
         case ADD_TODO:
-            return [...state, { text: action.text, isCompleted: false }];
-        case TOGGLE_TODO:
-            return state.map((item, index) => {
-                if (index === action.index) {
-                    return { ...item, isCompleted: !item.isCompleted };
+            return [...state, { id: v4(), text: action.text, isCompleted: false }];
+        case TOGGLE_TODO: {
+            return state.map(todoItem => {
+                if (todoItem.id === action.id) {
+                    return { ...todoItem, isCompleted: !todoItem.isCompleted };
                 }
-                return item;
+                return todoItem;
             });
+        }
         default:
             return state;
     }

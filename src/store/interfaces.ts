@@ -5,7 +5,7 @@ export enum VisibilityFilter {
 }
 
 export interface ToDoItem {
-    id: number;
+    id: string;
     text: string;
     isCompleted: boolean;
 }

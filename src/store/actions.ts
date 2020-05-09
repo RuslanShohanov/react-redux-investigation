@@ -5,8 +5,8 @@ export const addTodo = (text: string) => {
     return { type: ADD_TODO, text };
 };
 
-export const toggleTodo = (index: number) => {
-    return { type: TOGGLE_TODO, index };
+export const toggleTodo = (id: string) => {
+    return { type: TOGGLE_TODO, id };
 };
 
 export const setVisibilityFilter = (filter: VisibilityFilter) => {
