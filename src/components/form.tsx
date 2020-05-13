@@ -4,7 +4,7 @@ import { AnyAction } from 'redux';
 
 import { addTodo } from '../store/actions';
 
-export const AddTodo = (props: DispatchProp<AnyAction>) => {
+export const SubmitToDo = (props: DispatchProp<AnyAction>) => {
     const inputRef = React.createRef<HTMLInputElement>();
 
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {

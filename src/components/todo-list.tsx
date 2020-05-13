@@ -6,17 +6,24 @@ import { ToDoItem } from './todo-item';
 import { Styled } from './styled';
 
 export const ToDoList = (props: ToDoListProps) => {
-    debugger;
-    return (
-        <Styled.ToDoList>
-            {props.todos && props.todos.map((item) => (
-                <ToDoItem
-                    key={item.id}
-                    isCompleted={item.isCompleted}
-                    text={item.text}
-                    onClick={() => props.toggleTodo(item.id)}
-                />
-            ))}
-        </Styled.ToDoList>
-    );
+	return (
+		<Styled.ToDoList>
+			{props.todos &&
+				props.todos.map((item) => (
+					<Styled.ListItem key={item.id}>
+						<ToDoItem
+							id={item.id}
+							isCompleted={item.isCompleted}
+							text={item.text}
+							onClick={() => props.toggleTodo(item.id)}
+						/>
+						<Styled.RemoveButton
+							onClick={() => props.removeTodo(item.id)}
+						>
+							x
+						</Styled.RemoveButton>
+					</Styled.ListItem>
+				))}
+		</Styled.ToDoList>
+	);
 };
